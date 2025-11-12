@@ -24,7 +24,7 @@ impl AppConfig {
             (Ok(reader), _, _) => serde_yaml::from_reader(reader),
             (_, Ok(reader), _) => serde_yaml::from_reader(reader),
             (_, _, Ok(path)) => serde_yaml::from_reader(File::open(path)?),
-            _ => bail!("failed to load config file"),
+            _ => bail!("failed to load config file"), // return error anyhow
         };
         Ok(ret?)
     }
