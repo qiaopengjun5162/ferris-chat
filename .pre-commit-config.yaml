@@ -28,9 +28,9 @@ repos:
         files: \.rs$
         args: []
       - id: taplo fmt
-        name: taplo fmt
-        description: Format files with taplo.
-        entry: bash -c 'taplo fmt --option reorder_keys=true --check'
+        name: taplo fmt (Autofix)
+        description: Format files with taplo and reorder keys.
+        entry: bash -c 'taplo fmt --option reorder_keys=true'
         language: rust
         files: \.toml$
         args: []
