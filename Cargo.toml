@@ -30,8 +30,9 @@ sqlx = { version = "0.8.6", features = [
   "runtime-tokio",
   "tls-rustls",
   "runtime-tokio-rustls",
+  "chrono",
 ] }
 thiserror = "2.0.17"
 tokio = { version = "1.48.0", features = ["rt", "rt-multi-thread", "macros"] }
-tracing = "0.1.41"
-tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+tracing = "0.1.43"
+tracing-subscriber = { version = "0.3.22", features = ["env-filter"] }

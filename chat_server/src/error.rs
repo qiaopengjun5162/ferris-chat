@@ -1,24 +1,13 @@
 use thiserror::Error;
 
 #[derive(Error, Debug)]
-pub enum MyError {
-    #[error("IO error: {0}")]
-    Io(#[from] std::io::Error),
+pub enum AppError {
+    #[error("SQLx error: {0}")]
+    SqlxError(#[from] sqlx::Error),
 
-    #[error("Parse error: {0}")]
-    Parse(#[from] std::num::ParseIntError),
+    #[error("Password hash error: {0}")]
+    PasswordHashError(#[from] argon2::password_hash::Error),
 
-    #[error("Error: {0:?}")]
-    BigError(Box<BigError>),
-
-    #[error("An error occurred: {0}")]
-    Custom(String),
-}
-
-#[derive(Debug)]
-pub struct BigError {
-    pub a: String,
-    pub b: Vec<String>,
-    pub c: [u8; 64],
-    pub d: u64,
+    #[error("User not found")]
+    UserNotFound,
 }

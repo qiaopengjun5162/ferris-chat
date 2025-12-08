@@ -14,7 +14,9 @@ version = "0.1.0"
 
 [dependencies]
 anyhow = { workspace = true }
+argon2 = { version = "0.5.3", features = ["std"] }
 axum = { workspace = true }
+chrono = { version = "0.4.42", features = ["serde"] }
 serde = { workspace = true }
 serde_yaml = { workspace = true }
 sqlx = { workspace = true }
@@ -22,3 +24,6 @@ thiserror = { workspace = true }
 tokio = { workspace = true }
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true }
+
+[dev-dependencies]
+sqlx-db-tester = "0.7.1"
