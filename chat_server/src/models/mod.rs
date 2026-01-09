@@ -1,10 +1,11 @@
 mod user;
+pub use user::{CreateUser, SigninUser};
 
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 use sqlx::FromRow;
 
-#[derive(Debug, Clone, FromRow, Serialize, Deserialize)]
+#[derive(Debug, Clone, FromRow, Serialize, Deserialize, PartialEq, Eq)]
 pub struct User {
     pub id: i64,
     pub fullname: String,
